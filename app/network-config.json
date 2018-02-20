@@ -1,0 +1,43 @@
+{
+	"network-config": {
+		"orderer": {
+			"url": "grpcs://localhost:7050",
+			"server-hostname": "orderer.fundschain.com",
+			"tls_cacerts": "../artifacts/channel/crypto-config/ordererOrganizations/fundschain.com/orderers/orderer.fundschain.com/tls/ca.crt"
+		},
+		"wmc": {
+			"name": "peerWMC",
+			"mspid": "WMCMSP",
+			"ca": "https://localhost:7054",
+			"peers": {
+				"peer0": {
+					"requests": "grpcs://localhost:7051",
+					"events": "grpcs://localhost:7053",
+					"server-hostname": "peer0.wmc.fundschain.com",
+					"tls_cacerts": "../artifacts/channel/crypto-config/peerOrganizations/wmc.fundschain.com/peers/peer0.wmc.fundschain.com/tls/ca.crt"
+				}
+			},
+			"admin": {
+				"key": "../artifacts/channel/crypto-config/peerOrganizations/wmc.fundschain.com/users/Admin@wmc.fundschain.com/msp/keystore",
+				"cert": "../artifacts/channel/crypto-config/peerOrganizations/wmc.fundschain.com/users/Admin@wmc.fundschain.com/msp/signcerts"
+			}
+		},
+		"ta": {
+			"name": "peerTA",
+			"mspid": "TAMSP",
+			"ca": "https://localhost:8054",
+			"peers": {
+				"peer0": {
+					"requests": "grpcs://localhost:9051",
+					"events": "grpcs://localhost:9053",
+					"server-hostname": "peer0.ta.fundschain.com",
+					"tls_cacerts": "../artifacts/channel/crypto-config/peerOrganizations/ta.fundschain.com/peers/peer0.ta.fundschain.com/tls/ca.crt"
+				}
+			},
+			"admin": {
+				"key": "../artifacts/channel/crypto-config/peerOrganizations/ta.fundschain.com/users/Admin@ta.fundschain.com/msp/keystore",
+				"cert": "../artifacts/channel/crypto-config/peerOrganizations/ta.fundschain.com/users/Admin@ta.fundschain.com/msp/signcerts"
+			}
+		}
+	}
+}
